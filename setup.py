@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="visjs-component",
-    version="0.1.0",
+    version="0.1.1",
     author="Magno Sousa",
     author_email="xtremerhd@gmail.com",
     description="Streamlit component that wraps visjs",
