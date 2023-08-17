@@ -1,6 +1,6 @@
 # visjs-component
 
-Streamlit component that allows you to do X
+Streamlit component that wraps [vis.js](https://visjs.org/).
 
 ## Installation instructions 
 
@@ -12,9 +12,53 @@ pip install visjs-component
 
 ```python
 import streamlit as st
+from visjs_component import visjs
 
-from visjs_component import visjs_component
+data = {
+    "nodes": [
+        {"id": 1, "label": "Node 1"},
+        {"id": 2, "label": "Node 2"},
+        {"id": 3, "label": "Node 3"},
+        {"id": 4, "label": "Node 4"},
+        {"id": 5, "label": "Node 5"},
+    ],
+    "edges": [
+        {"from": 1, "to": 3},
+        {"from": 1, "to": 2},
+        {"from": 2, "to": 4},
+        {"from": 2, "to": 5},
+    ],
+    "options": {
+        "nodes": {
+            "shape": "dot",
+            "size": 16,
+        },
+        "edges": {
+            "color": "#000000",
+        },
+        "physics": {
+            "enabled": True,
+        },
+        "interaction": {
+            "hover": True,
+        },
+        "height": "500px",
+    },
+}
 
-value = visjs_component()
+eventHandlers = [
+    {
+        "event": "click",
+        "callback": lambda eventData: st.json(
+            eventData['data']
+        ),
+    }
+]
 
-st.write(value)
+visjs(title="# Network Vis", type="network", data=data, eventHandlers=eventHandlers)
+```
+
+Supports all vis.js types: 
+- network
+- timeline
+- graph3d
