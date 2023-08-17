@@ -1,4 +1,4 @@
-# visjs-component
+# Streamlit visjs component
 
 Streamlit component that wraps [vis.js](https://visjs.org/).
 
@@ -62,3 +62,10 @@ Supports all vis.js types:
 - network
 - timeline
 - graph3d
+
+
+## Donate
+
+If you like this project and want to support it, please consider donating.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C4OBZTC)
