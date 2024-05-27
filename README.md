@@ -55,13 +55,34 @@ eventHandlers = [
     }
 ]
 
-visjs(title="# Network Vis", type="network", data=data, eventHandlers=eventHandlers)
+visjs(title="# Network Vis", type="network", data=data, eventHandlers=eventHandlers, key="my_network_id")
 ```
 
 Supports all vis.js types: 
 - network
 - timeline
 - graph3d
+
+
+## Change Log
+All notable changes to this project will be documented in this file.
+ 
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
+ 
+## [0.2.0] - 2024-05-27
+ 
+### Added
+- New `combined.py` example with the 3 types of visualisations
+- Support for multiple instances by adding a `key` parameter as shown below
+
+```
+visjs(title="# Network Vis", type="network", data=data, eventHandlers=eventHandlers, key="your_unique_key")
+```
+
+### Changed
+
+- `title` property is now optional.
 
 
 ## Donate
